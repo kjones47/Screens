@@ -13,4 +13,11 @@ public class Event {
     public Event(){
 
     }
+    public Event(String title, String chair, int points){
+
+    }
+    public void setTime(int a,int b){
+
+    }
+
 }
