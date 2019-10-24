@@ -17,6 +17,7 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
+    private ViewPagerAdapter adapter;
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
@@ -24,16 +25,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //viewPager = (ViewPager) findViewById(R.id.viewpager);
-        //ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        //viewPager.setAdapter(adapter);
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new Tab1Fragment(), "Tab 1");
+        adapter.addFragment(new Tab2Fragment(), "Tab 2");
+        adapter.addFragment(new Tab3Fragment(), "Tab 3");
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 
         FloatingActionButton fab = findViewById(R.id.fab);

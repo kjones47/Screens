@@ -6,41 +6,4 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main">
-
-    <LinearLayout
-        android:id="@+id/fragment_ma"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top">
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/section_label"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Home" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Events" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Points" />
-        </com.google.android.material.tabs.TabLayout>
-
-        <fragment
-            android:id="@+id/fragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    tools:showIn="@layout/activity_main"/>
