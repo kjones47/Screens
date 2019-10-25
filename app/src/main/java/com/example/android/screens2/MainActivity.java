@@ -13,6 +13,9 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,13 +35,33 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+    //    setContentView(R.layout.activity_main);
+   //     ScrollView scroll = (ScrollView) this.findViewById(R.id.sv);
+
+        Event event1 = new Event("Conference Prep", 10, 24, 2019, 5);
+        Event event2 = new Event("Pumpkin Carving", 10, 30, 2019, 3);
+        Event event3 = new Event("Trick or Treating", 10, 30, 2019, 3);
+        Event event4 = new Event("Midterms Study Session", 11, 4, 2019, 3);
+        Event event5 = new Event("Movie Night", 11, 8, 2019, 3);
+        ScrollView ll = findViewById(R.id.sv);
+        Event events[] = {event1,event2,event3, event4, event5};
+        int tvs[] = {R.id.textView9,R.id.textView10,R.id.textView11,R.id.textView12,R.id.textView13};
+        for(int i=0; i<3;i++){
+           TextView t = findViewById(tvs[i]);
+           t.setText(events[i].getTitle());
+        }
+
+
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new Tab1Fragment(), "Tab 1");
         adapter.addFragment(new Tab2Fragment(), "Tab 2");
         adapter.addFragment(new Tab3Fragment(), "Tab 3");
-
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+
+
+
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
