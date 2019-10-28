@@ -10,14 +10,23 @@ public class Event {
     String [] rsvps;
     int points;
 
-    public Event(){
-
+    public Event(String t){
+        title = t;
     }
-    public Event(String title, String chair, int points){
-
+    public Event(String t, int m, int d,int y, int p){
+        month = m;
+        date = d;
+        year = y;
+        title = t;
+        points = p;
     }
+    /*  public Event(String title, String chair, int points){
+      }*/
     public void setTime(int a,int b){
 
+    }
+    public String getTitle(){
+        return title;
     }
 
 }
